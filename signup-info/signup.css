@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #AFD4FF;
+}
+
+img{
+    position: absolute;
+top: 7rem;
+right: 10rem;
+height: 70vh;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.form-info{
+    width: 20rem;
+    position: absolute;
+    top: 7rem;
+    left: 5rem;
+}
+
+form input{
+    width: 50%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.btn-box{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.signup-btn {
+    width: 7rem;
+    height: 2rem;
+    margin: 0 1rem;
+    background: linear-gradient(to right, #92c8f7, #1474E4);
+    border-radius: 1.5rem;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
