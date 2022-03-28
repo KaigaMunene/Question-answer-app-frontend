@@ -33,34 +33,65 @@
 
         </ul>
     </nav>
-    
-    <div class="login_form">
-        <div class="login_info">
-            <form>
-                <div>
-                    <h1>Login</h1>
-                    <h4>Sign in to your account</h4>
-                </div>
-                <div>
-                    <label for="email"><b>Email :</b></label>
-                    <input type="text" placeholder="Email" name="Email" required>
-                </div>
-                <div>
-                    <label for="password"><b>Password :</b></label>
-                    <input type="text" placeholder="Password" name="password" required>
-                </div>
 
-                <div>
-                    <button type="submit">Login</button>
-                </div>
+    <div class="login">
+        <form class="login-info" onsubmit="validateLoginForm(event)">
+            <h1>Login</h1>
+            <h4>Sign in to your account</h4>
+            <label for=" email"><b>Email :</b></label>
+            <input type="text" placeholder="Email" name="Email" id="email" required><br>
+            <div class="error-msg"> <span id="email-err"></span></div>
 
-                <span>I forgot my password <a href="#">click here</a> to reset</span>
+            <label for="password"><b>Password :</b></label>
+            <input type="text" placeholder="Password" name="password" id="password" required><br>
+            <div class="error-msg"> <span id="password-err"></span></div>
 
-                <div>Not a member? <a href="#"> sign-up now</a></div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
 
-            </form>
-        </div>
+            <div class="psw"><span>I forgot my password <a href="#">click here</a> to reset</span></div>
+
+            <div class="psw">Not a member? <a href="#"> sign-up</a> now</div>
+        </form>
     </div>
+
+    <script>
+        function validateLoginForm(event) {
+            event.preventDefault()
+            const mail = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if(emailValidation(mail) == "" || passwordValidation(password) == ""){
+                return false;
+            }
+
+            else {
+                alert("Successfully logged in");
+                return true;
+            }
+        }
+
+        function emailValidation(mail){
+            let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (mail.match(mailformat)) {
+                return true;
+            }
+            else {
+                document.getElementById("email-err").innerText = "Enter a valid email address"
+                return false;
+            }
+        }
+
+        function passwordValidation(password){
+            let passwordLen = password.length
+            if (passwordLen == 0 || passwordLen < 8) {
+                document.getElementById("password-err").innerText = "password should be more than 8 characters"
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 
 </html>

@@ -39,30 +39,113 @@
     </div>
 
     <div>
-        <form onsubmit="handleOnSubmit(event)" class="form-info">
+        <form class="form-info" onsubmit="validateSignupForm(event)">
             <h1>Sign Up</h1>
             <label for="first_name"><b>First_Name :</b></label>
-            <input type="text" placeholder="Enter your First name" name="first_name" required><br>
+            <input type="text" placeholder="Enter your First name" name="first_name" id="first_name" required><br>
+            <div class="error-msg"> <span id="firstname-err"></span></div>
 
             <label for="last_name"><b>Last_Name :</b></label>
-            <input type="text" placeholder="Enter your Last name" name="last_name" required><br>
+            <input type="text" placeholder="Enter your Last name" name="last_name" id="last_name" required><br>
+            <div class="error-msg"> <span id="lastname-err"></span></div>
+
 
             <label for="username"><b>Username :</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required><br>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required><br>
+            <div class="error-msg"> <span id="username-err"></span></div>
+
 
             <label for="email"><b>Email :</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required><br>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required><br>
+            <div class="error-msg"> <span id="email-err"></span></div>
+
 
             <label for="password"><b>Password :</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required><br>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required><br>
+            <div class="error-msg"> <span id="password-err"></span></div>
+
             <div class="btn-box">
-                <button type="submit" class="signup-btn">Sigup</button>
+                <button type="submit" id="signup-btn">Sigup</button>
             </div>
 
             <p>Already have an account? <a href="#">Login here</a></p>
         </form>
 
     </div>
+
+    <script>
+        function validateSignupForm(event) {
+            event.preventDefault();
+            const firstName = document.getElementById("first_name").value;
+            const lastName = document.getElementById("last_name").value;
+            const userName = document.getElementById("username").value;
+            const mail = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (firstNameValidation(firstName) == "" || lastNameValidation(lastName) == "" || usernameValidation(userName) == "" || emailValidation(mail) == "" || passswordValidation(password) == "") {
+                return false;
+            }
+
+            else {
+                alert("successfully signed up");
+                return true;
+            }
+        }
+
+        function firstNameValidation(firstName) {
+            let letters = /^[a-z ,.'-]+$/i
+            if (firstName.match(letters)) {
+                return true;
+            }
+            else {
+                document.getElementById("firstname-err").innerText = "Enter a valid first name, must be one word"
+                return false;
+            }
+        }
+
+        function lastNameValidation(lastName) {
+            let letters = /^[a-z ,.'-]+$/i
+            if (lastName.match(letters)) {
+                return true;
+            }
+            else {
+                document.getElementById("lastname-err").innerText = "Enter a valid last name, must be one word"
+                return false;
+            }
+        }
+
+        function usernameValidation(userName) {
+            let name = /^[a-z\d_]{6,16}$/
+            if (userName.match(name)) {
+                return true;
+            }
+            else {
+                document.getElementById("username-err").innerText = "Enter a valid username,shouldn't be less than 6 characters"
+                return false;
+            }
+        }
+
+        function emailValidation(mail) {
+            let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (mail.match(mailformat)) {
+                return true;
+            }
+            else {
+                document.getElementById("email-err").innerText = "enter a valid email address"
+                return false;
+            }
+        }
+
+        function passswordValidation(password) {
+            let passwordLen = password.length
+            if (passwordLen == 0 || passwordLen < 8) {
+                document.getElementById("password-err").innerText = "password should be more than 8 characters"
+                return false;
+            }
+            return true;
+        }
+
+    </script>
 </body>
 
 </html>

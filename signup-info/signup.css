@@ -115,6 +115,14 @@ form input {
   background: transparent;
 }
 
+.error-msg{
+  color:red;
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 20px;
+
+}
+
 .btn-box {
   width: 100%;
   margin: 30px auto;
