@@ -6,13 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="signup.css">
 </head>
 
 <body>
-    <img src="../images/signup-pic.png" alt="Picture showing someone signing up">
+    <nav>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="StackOverflow-lite">
+            </a>
+        </div>
+        <ul class="menu">
+            <li>
+                <div class="search_box">
+                    <input type="search" placeholder="search for questions...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+
+        </ul>
+    </nav>
+
     <div>
-        <form class="form-info">
+        <img src="../images/signup-pic.png" alt="Picture showing someone signing up">
+    </div>
+
+    <div>
+        <form onsubmit="handleOnSubmit(event)" class="form-info">
             <h1>Sign Up</h1>
             <label for="first_name"><b>First_Name :</b></label>
             <input type="text" placeholder="Enter your First name" name="first_name" required><br>
@@ -29,8 +56,8 @@
             <label for="password"><b>Password :</b></label>
             <input type="password" placeholder="Enter Password" name="password" required><br>
             <div class="btn-box">
-            <button type="submit" class="signup-btn">Sigup</button>
-        </div>
+                <button type="submit" class="signup-btn">Sigup</button>
+            </div>
 
             <p>Already have an account? <a href="#">Login here</a></p>
         </form>
