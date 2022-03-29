@@ -11,14 +11,14 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./resources/css/login.css">
 </head>
 
 <body>
     <nav>
         <div class="logo">
-            <a href="../index.html">
-                <img src="../images/logo.png" alt="StackOverflow-lite">
+            <a href="index.html">
+                <img src="./resources/images/logo.png" alt="StackOverflow-lite">
             </a>
         </div>
         <ul class="menu">
@@ -28,7 +28,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </li>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
 
         </ul>
@@ -56,42 +56,7 @@
         </form>
     </div>
 
-    <script>
-        function validateLoginForm(event) {
-            event.preventDefault()
-            const mail = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            if(emailValidation(mail) == "" || passwordValidation(password) == ""){
-                return false;
-            }
-
-            else {
-                alert("Successfully logged in");
-                return true;
-            }
-        }
-
-        function emailValidation(mail){
-            let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if (mail.match(mailformat)) {
-                return true;
-            }
-            else {
-                document.getElementById("email-err").innerText = "Enter a valid email address"
-                return false;
-            }
-        }
-
-        function passwordValidation(password){
-            let passwordLen = password.length
-            if (passwordLen == 0 || passwordLen < 8) {
-                document.getElementById("password-err").innerText = "password should be more than 8 characters"
-                return false;
-            }
-            return true;
-        }
-    </script>
+    <script type="text/javascript" src="./resources/javascript/login.js"></script>
 </body>
 
 </html>
