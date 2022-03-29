@@ -7,7 +7,7 @@
 body {
   font-family: "Poppins", sans-serif;
   width: 100%;
-  background: url("images/background-image.png");
+  background: url("../images/background-image.png");
   background-position: right bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -138,31 +138,3 @@ i {
   color: #fff;
 }
 
-.login_form {
-  position: relative;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  border: 1px solid black;
-
-  /* align-content: center;
-  line-height: 2rem; */
-  /* width: 20rem;
-  height: 20rem;
-  margin: 5px 10px; */
-  /* background: #7076fe;
-  position: absolute;
-  transform: translate(-50%, -50%); */
-}
-/* .login_info {
-  width: 20rem;
-  height: 20rem;
-  background: #ffffff;
-  border: 1px solid black;
-  top: 45%;
-  left: 45%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  padding: 70px 30px;
-} */

@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 40px;
+    background-color: transparent;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav .logo img {
+    width: 12rem;
+    height: auto;
+    padding: 2px;
+  }
+  
+  nav .logo img:hover {
+    opacity: 0.7;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu li {
+    list-style: none;
+    margin: 0 1rem;
+  }
+  
+  .menu li a {
+    color: #000;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+  
+  .menu li a:hover {
+    color: #fff;
+    font-weight: bold;
+    transition: all ease 0.2s;
+  }
+  
+  .search_box {
+    position: relative;
+    width: 65px;
+    height: 40px;
+    line-height: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .search_box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #555;
+    font-size: 1.1rem;
+    background-color: transparent;
+  }
+  
+  .search_box:hover {
+    background-color: white;
+    width: 500px;
+  }
+  
+  i {
+    font-size: 1em;
+    cursor: pointer;
+  }
+.login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .login-info {
+  line-height: 3rem;
+  padding: 1rem;
+  border: 1px solid black;
+  }
+  
+  .login-info h1{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .login-info h4{
+    text-align: center;
+    font-size: 1rem;
+  }
+  .login-info input{
+    width: 50%;
+    padding: 5px 5px;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+  }
+  
+  .login-info button{
+    width: 5rem;
+    height: 2rem;
+    margin: 0 1rem;
+    background: linear-gradient(to right, #92c8f7, #1474e4);
+    border-radius: 1.5rem;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .login-info .error-msg{
+    color:red;
+    text-align: justify;
+    font-size: 0.6em;
+  }
+  
+  .login-info .psw{
+    font-size: 0.7rem;
+    line-height: normal;
+  }
+  
+  .login a{
+    text-decoration: none;
+  }

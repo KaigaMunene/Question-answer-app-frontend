@@ -39,30 +39,41 @@
     </div>
 
     <div>
-        <form onsubmit="handleOnSubmit(event)" class="form-info">
+        <form class="form-info" onsubmit="validateSignupForm(event)">
             <h1>Sign Up</h1>
             <label for="first_name"><b>First_Name :</b></label>
-            <input type="text" placeholder="Enter your First name" name="first_name" required><br>
+            <input type="text" placeholder="Enter your First name" name="first_name" id="first_name" required><br>
+            <div class="error-msg"> <span id="firstname-err"></span></div>
 
             <label for="last_name"><b>Last_Name :</b></label>
-            <input type="text" placeholder="Enter your Last name" name="last_name" required><br>
+            <input type="text" placeholder="Enter your Last name" name="last_name" id="last_name" required><br>
+            <div class="error-msg"> <span id="lastname-err"></span></div>
+
 
             <label for="username"><b>Username :</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required><br>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required><br>
+            <div class="error-msg"> <span id="username-err"></span></div>
+
 
             <label for="email"><b>Email :</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required><br>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required><br>
+            <div class="error-msg"> <span id="email-err"></span></div>
+
 
             <label for="password"><b>Password :</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required><br>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required><br>
+            <div class="error-msg"> <span id="password-err"></span></div>
+
             <div class="btn-box">
-                <button type="submit" class="signup-btn">Sigup</button>
+                <button type="submit" id="signup-btn">Sigup</button>
             </div>
 
             <p>Already have an account? <a href="#">Login here</a></p>
         </form>
 
     </div>
+
+    <script type="text/javascript" src="./resources/javascript/signup.js"></script>>
 </body>
 
 </html>
