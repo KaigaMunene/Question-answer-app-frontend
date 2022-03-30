@@ -3,14 +3,24 @@ function validateLoginForm(event) {
     const mail = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    if(emailValidation(mail) == "" || passwordValidation(password) == ""){
-        return false;
+    let isValid = true;
+    if(!emailValidation(mail)){
+        document.getElementById("email-err").innerText = "Enter a valid email address"
+        isValid = false;
+    } 
+    if (!passwordValidation(password)){
+        document.getElementById("password-err").innerText = "password should be more than 8 characters"
+        isValid = false;
     }
 
-    else {
-        alert("Successfully logged in");
-        return true;
-    }
+    if(isValid){
+        const formData = {
+          email: mail,
+          password: password
+        }
+        login(formData)
+        window.location.replace("main.html");
+      }
 }
 
 function emailValidation(mail){
@@ -19,7 +29,6 @@ function emailValidation(mail){
         return true;
     }
     else {
-        document.getElementById("email-err").innerText = "Enter a valid email address"
         return false;
     }
 }
@@ -27,8 +36,26 @@ function emailValidation(mail){
 function passwordValidation(password){
     let passwordLen = password.length
     if (passwordLen == 0 || passwordLen < 8) {
-        document.getElementById("password-err").innerText = "password should be more than 8 characters"
         return false;
     }
     return true;
+}
+
+async function login(formData) {
+    let data = JSON.stringify(formData);
+
+    try{
+        const login = await fetch("http://127.0.0.1:8000/api/v1/users/token/",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: data,
+        });
+        const response = await login.json();
+        console.log("Success:", response);                 
+    } catch (error){
+        console.log("Error:", error);
+    }
 }

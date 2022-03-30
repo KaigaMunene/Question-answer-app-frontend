@@ -1,10 +1,19 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
-}
-
-nav {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  nav {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 2px;
@@ -18,6 +27,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid black;
   }
   
   nav .logo img {
@@ -84,72 +94,25 @@ nav {
     font-size: 1em;
     cursor: pointer;
   }
-.login{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  
 
-  .login-info {
-  line-height: 3rem;
-  width: 20rem;
-  height: 20rem;
-  padding: 1rem;
-  border: 1px solid black;
-  }
-  
-  .login-info label{
-    text-align: left;
+  .form-data{
+      display: flex;
+      justify-content: center;
+      flex-direction:column;
+      position: relative;
+      padding: 1rem;
+      width: 100%;
+      height: 100vh;
   }
 
-  .login-info input{
-    display: inline-block;
+  .form-data input{
+      width: 50%;
   }
 
-  .login-info h1{
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .login-info h4{
-    text-align: center;
-    font-size: 1rem;
-  }
-  .login-info input{
-    width: 60%;
-    padding: 5px 5px;
-    margin: 5px 0;
-    border: 0;
-    border-bottom: 1px solid #999;
-    outline: none;
-  }
-  
-  .login-info button{
-    width: 5rem;
-    height: 2rem;
-    margin: 0 1rem;
-    background: linear-gradient(to right, #92c8f7, #1474e4);
-    border-radius: 1.5rem;
-    border: 0;
-    outline: none;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .login-info .error-msg{
+  .error-msg{
     color:red;
     text-align: justify;
-    font-size: 0.6em;
-  }
+    font-size: 12px;
+    padding-bottom: 20px;
   
-  .login-info .psw{
-    font-size: 0.7rem;
-    line-height: normal;
-  }
-  
-  .login a{
-    text-decoration: none;
   }
