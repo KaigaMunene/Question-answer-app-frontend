@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/question-form.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">
+                <img src="./resources/images/logo.png" alt="StackOverflow-lite">
+            </a>
+        </div>
+        <ul class="menu">
+            <li>
+                <div class="search_box">
+                    <input type="search" placeholder="search for questions...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="main.html">Main</a></li>
+        </ul>
+    </nav>
+    <div class="form-data">
+        <h1>Ask a public question</h1>
+        <form class="question-form" onsubmit="validateQuestionForm(event)">
+            <label for="title"><b>Title</b></label>
+            <div>
+                <p>Be specific and imagine you're asking a question to another person</p>
+            </div>
+            <input type="text" maxlength="300"
+                placeholder="e.g. Is there an R function for finding the index of an element in a vector?" name="title"
+                id="title" data-min-length="15" data-max-length="150" autocomplete="off" ><br>
+            <div class="error-msg"> <span id="title-err"></span></div>
+
+            <label for="body"><b>Body</b></label>
+            <div>
+                <p>Include all the information someone would need to answer your question</p>
+            </div>
+            <textarea id="qs-input" name="body" cols="92" rows="15" data-min-length="" ></textarea>
+            <div class="error-msg"> <span id="qs-input-err"></span></div>
+
+            <div>
+                <button type="submit" id="qs-btn">post your question</button>
+            </div>
+        </form>
+    <script type="text/javascript" src="./resources/javascript/question-form.js"></script>
+</body>
+
+</html>

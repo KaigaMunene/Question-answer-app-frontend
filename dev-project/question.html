@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question form</title>
+    <title>Home Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,39 +24,34 @@
         <ul class="menu">
             <li>
                 <div class="search_box">
-                    <input type="search" placeholder="search for questions...">
+                    <input id="search" onkeyup="searchInfo()" type="search" placeholder="search for questions..." >
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </li>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="main.html">Main</a></li>
+            <li><a href="#">Main</a></li>
         </ul>
     </nav>
-    <div class="form-data">
-        <h1>Ask a public question</h1>
-        <form class="question-form" onsubmit="validateQuestionForm(event)">
-            <label for="title"><b>Title</b></label>
-            <div>
-                <p>Be specific and imagine you're asking a question to another person</p>
-            </div>
-            <input type="text" maxlength="300"
-                placeholder="e.g. Is there an R function for finding the index of an element in a vector?" name="title"
-                id="title" data-min-length="15" data-max-length="150" autocomplete="off" ><br>
-            <div class="error-msg"> <span id="title-err"></span></div>
 
-            <label for="body"><b>Body</b></label>
-            <div>
-                <p>Include all the information someone would need to answer your question</p>
-            </div>
-            <textarea id="qs-input" name="body" cols="92" rows="15" data-min-length="" ></textarea>
-            <div class="error-msg"> <span id="qs-input-err"></span></div>
+    <div class="sidenav">
+        <a href="#">Questions</a>
+        <a href="#">Tags</a>
+        <a href="#">Users</a>
+      </div>
 
-            <div>
-                <button type="submit" id="qs-btn">post your question</button>
-            </div>
-        </form>
+    <section class="main">
+        <div class="container">
+            <div id="question"></div>
+            <div id="answer"></div>
+        </div>
+    </section>
+
+    <form>
+        
+    </form>
     <script type="text/javascript" src="./resources/javascript/question.js"></script>
+
 </body>
 
 </html>
