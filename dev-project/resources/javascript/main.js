@@ -25,7 +25,6 @@ function appendQuestions(questions){
   <div>
   <a href="question.html?id=${questions[i].id}">
   <h1>${questions[i].title}</h1>
-  <p>${questions[i].question}</p>
   </a> 
   </div>`;
   document.getElementById("questions").innerHTML = inquiry

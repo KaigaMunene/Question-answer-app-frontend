@@ -10,6 +10,7 @@ body {
   height: 100vh;
 }
 
+
 nav {
   text-transform: uppercase;
   font-weight: 400;
@@ -19,7 +20,7 @@ nav {
   left: 0;
   width: 100%;
   padding: 5px 40px;
-  background-color: transparent;
+  background-color: snow;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -135,11 +136,25 @@ i {
 
 #answer {
   padding-top: 1rem;
-  color: grey;
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
   max-width: 50rem;
   margin: 0 auto;
   display: list-item;
+}
+
+#answer-form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#answer-form h1{
+font-size: 1rem;
+text-align: left;
 }

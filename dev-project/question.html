@@ -17,7 +17,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="#">
+            <a href="main.html">
                 <img src="./resources/images/logo.png" alt="StackOverflow-lite">
             </a>
         </div>
@@ -28,14 +28,13 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </li>
-            <li><a href="#">Home</a></li>
+            <li><a href="main.html">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Main</a></li>
         </ul>
     </nav>
 
     <div class="sidenav">
-        <a href="#">Questions</a>
+        <a href="main.html">Questions</a>
         <a href="#">Tags</a>
         <a href="#">Users</a>
       </div>
@@ -47,8 +46,15 @@
         </div>
     </section>
 
-    <form>
-        
+    <form id="answer-form" method="POST">
+        <h1> Your answer </h1>
+
+        <textarea id="ans-input" name="body" cols="92" rows="15" data-min-length="" ></textarea>
+        <div class="error-msg"> <span id="ans-input-err"></span></div>
+
+        <div>
+            <button type="submit" id="ans-btn">post your answer</button>
+        </div>
     </form>
     <script type="text/javascript" src="./resources/javascript/question.js"></script>
 

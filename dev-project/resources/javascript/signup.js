@@ -1,3 +1,8 @@
+import "regenerator-runtime/runtime";
+document.getElementById("signup-form").addEventListener("submit", (event)=>{
+  validateSignupForm(event);
+})
+
 function validateSignupForm(event) {
   event.preventDefault();
   const firstName = document.getElementById("first_name").value;
@@ -6,6 +11,7 @@ function validateSignupForm(event) {
   const mail = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
+  
   let isValid = true;
   if (!firstNameValidation(firstName)) {
     document.getElementById("firstname-err").innerText =
@@ -33,15 +39,15 @@ function validateSignupForm(event) {
       "password should be more than 8 characters";
     isValid = false;
   }
-  if(isValid){
+  if (isValid) {
     const formData = {
       first_name: firstName,
       last_name: lastName,
       username: userName,
       email: mail,
-      password: password
-    }
-    signup(formData)
+      password: password,
+    };
+    signup(formData);
     window.location.replace("login.html");
   }
 }

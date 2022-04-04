@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel main.html question.html",
-    "build": "parcel build main.html question.html"
+    "dev": "parcel index.html sign-up.html login.html question-form.html main.html question.html",
+    "build": "parcel index.html sign-up.html login.html question-form.html main.html question.html"
   },
   "keywords": [],
   "author": "",

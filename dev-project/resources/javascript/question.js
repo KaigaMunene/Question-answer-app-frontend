@@ -1,14 +1,57 @@
 import "regenerator-runtime/runtime";
 import axios from "axios";
 
-let questions = []
-
 const BASEURL = "http://127.0.0.1:8000/api/v1";
 const id = new URL(location.href).searchParams.get("id");
 
 
 getQuestion(id);
 getAnswers(id);
+
+document.getElementById("answer-form").addEventListener("submit",(event)=>{
+  validateAnswerForm(event)
+})
+
+function validateAnswerForm(event) {
+  event.preventDefault()
+  const answer  = document.getElementById("ans-input").value;
+
+  if (answer == "" || answer == null || answer == undefined) {
+  document.getElementById("ans-input-err").innerText = "Answer is missing"
+  return false;
+}
+  else {
+    const answerData = {
+        question_id: id,
+        answer: answer
+      }
+      answerForm(answerData)
+      window.location.replace(`question.html?id=${id}`);
+  }
+  return answerData
+}
+
+
+async function answerForm(answerData){
+  let data = JSON.stringify(answerData);
+
+  try {
+    const register = await fetch(
+      "http://127.0.0.1:8000/api/v1/ans/answer/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: data,
+      }
+    );
+    const response = await register.json();
+    console.log("Success:", response);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
 
 async function getQuestion(question_id) {
   try {
@@ -35,7 +78,7 @@ function appendQuestion(question){
 function getAnswers(question_id){
     axios({
         method: "GET",
-        params: { id: id },
+        // params: { id: id },
         baseURL: BASEURL,
         url: `ans/answers/question/${question_id}`,
       }).then((response) => {

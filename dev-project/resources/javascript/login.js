@@ -1,3 +1,8 @@
+import "regenerator-runtime/runtime";
+document.getElementById("login-form").addEventListener("submit", (event)=>{
+  validateLoginForm(event);
+})
+
 function validateLoginForm(event) {
     event.preventDefault()
     const mail = document.getElementById("email").value;

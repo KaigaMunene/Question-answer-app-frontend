@@ -87,7 +87,8 @@ i {
   font-size: 1em;
   cursor: pointer;
 }
-img {
+
+#img {
   position: absolute;
   top: 7rem;
   right: 10rem;
@@ -103,6 +104,8 @@ a {
   position: absolute;
   top: 7rem;
   left: 5rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(143, 154, 255, 0.785);
 }
 
 form input {
