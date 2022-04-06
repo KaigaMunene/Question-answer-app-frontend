@@ -7,10 +7,7 @@
 body {
   font-family: "Poppins", sans-serif;
   width: 100%;
-  background: url("../images/background-image.png");
-  background-position: right bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #f7fbff;
   height: 100vh;
 }
 
@@ -57,7 +54,7 @@ nav .logo img:hover {
 }
 
 .menu li a:hover {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   transition: all ease 0.2s;
 }
@@ -99,14 +96,30 @@ i {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem;
 }
 
+.txt-content {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 10px 18px rgb(255, 123, 0);
+  width: 30rem;
+  height: 60vh;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 0.8rem;
+}
 .hero .img {
-  width: 50%;
+  width: 40%;
   height: auto;
+  right: 0.5rem;
 }
 
 .hero .img img {
@@ -122,19 +135,24 @@ i {
 .actions button {
   width: 160px;
   height: 40px;
-  background-color: #7076fe;
-  border: none;
   margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin-bottom: 5px;
+  margin-left: 10px;
   font-size: 18px;
-  border-radius: 10px;
   cursor: pointer;
   transition: 0.4s ease;
 }
 
-.actions button:hover{
+.signup{
+border-radius: 0.5rem;
+}
+
+.login{
+  background-color: rgb(255, 123, 0);
+  border: none;
+}
+
+.actions button:hover {
   background-color: #000;
   color: #fff;
 }
-
