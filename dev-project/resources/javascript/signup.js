@@ -1,7 +1,10 @@
 import "regenerator-runtime/runtime";
-document.getElementById("signup-form").addEventListener("submit", (event)=>{
+import axios from "axios";
+import { appBaseUrl } from "../utils/constants"
+
+document.getElementById("signup-form").addEventListener("submit", (event) => {
   validateSignupForm(event);
-})
+});
 
 function validateSignupForm(event) {
   event.preventDefault();
@@ -11,7 +14,6 @@ function validateSignupForm(event) {
   const mail = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  
   let isValid = true;
   if (!firstNameValidation(firstName)) {
     document.getElementById("firstname-err").innerText =
@@ -100,16 +102,15 @@ async function signup(formData) {
   let data = JSON.stringify(formData);
 
   try {
-    const register = await fetch(
-      "http://127.0.0.1:8000/api/v1/users/register/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: data,
-      }
-    );
+    const register = await axios({
+      method: "POST",
+      baseURL: appBaseUrl,
+      url: "users/register",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: data,
+    });
     const response = await register.json();
     console.log("Success:", response);
   } catch (error) {

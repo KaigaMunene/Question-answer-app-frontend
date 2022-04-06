@@ -40,23 +40,23 @@
             <div>
                 <p>Be specific and imagine you're asking a question to another person</p>
             </div>
-            <input type="text" maxlength="300"
+            <input type="text" maxlength="300" required
                 placeholder="e.g. Is there an R function for finding the index of an element in a vector?" name="title"
-                id="title" data-min-length="15" data-max-length="150" autocomplete="off" ><br>
+                id="title" data-min-length="15" data-max-length="150" autocomplete="off"><br>
             <div class="error-msg"> <span id="title-err"></span></div>
 
             <label for="body"><b>Body</b></label>
             <div>
                 <p>Include all the information someone would need to answer your question</p>
             </div>
-            <textarea id="qs-input" name="body" cols="92" rows="15" data-min-length="" ></textarea>
+            <textarea id="qs-input" name="body" cols="92" rows="15" data-min-length="" required></textarea>
             <div class="error-msg"> <span id="qs-input-err"></span></div>
 
             <div>
                 <button type="submit" id="qs-btn">post your question</button>
             </div>
         </form>
-    <script type="text/javascript" src="./resources/javascript/question-form.js"></script>
+        <script type="text/javascript" src="./resources/javascript/question-form.js"></script>
 </body>
 
 </html>
