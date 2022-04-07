@@ -1,6 +1,6 @@
 import "regenerator-runtime/runtime";
 import axios from "axios";
-import { appBaseUrl } from "../utils/constants"
+import { appBaseUrl } from "../utils/constants";
 
 document.getElementById("signup-form").addEventListener("submit", (event) => {
   validateSignupForm(event);
@@ -42,16 +42,16 @@ function validateSignupForm(event) {
     isValid = false;
   }
   if (isValid) {
-    const formData = {
-      first_name: firstName,
-      last_name: lastName,
-      username: userName,
-      email: mail,
-      password: password,
-    };
-    signup(formData);
-    window.location.replace("login.html");
-  }
+  const formData = {
+    first_name: firstName,
+    last_name: lastName,
+    username: userName,
+    email: mail,
+    password: password,
+  };
+  signup(formData);
+  window.location.replace("login.html");
+}
 }
 
 function firstNameValidation(firstName) {
@@ -102,18 +102,41 @@ async function signup(formData) {
   let data = JSON.stringify(formData);
 
   try {
-    const register = await axios({
+    const response = await axios({
       method: "POST",
       baseURL: appBaseUrl,
-      url: "users/register",
+      url: "users/register/",
       headers: {
         "Content-Type": "application/json",
       },
-      body: data,
+      data,
     });
-    const response = await register.json();
-    console.log("Success:", response);
+
+    console.log(response.data);
   } catch (error) {
-    console.log("Error:", error);
+    const errors = error.response.data;
+    for (let key in errors) {
+      let isValid = true;
+      if (key === "first_name") {
+        document.getElementById("firstname-err").innerText = errors[key];
+        isValid = false;
+      }
+      if (key === "last_name") {
+        document.getElementById("last_name-err").innerText = errors[key];
+        isValid = false;
+      }
+      if (key === "username") {
+        document.getElementById("username-err").innerText = errors[key];
+        isValid = false;
+      }
+      if (key === "email") {
+        document.getElementById("email-err").innerText = errors[key];
+        isValid = false;
+      }
+      if (key === "password") {
+        document.getElementById("password-err").innerText = errors[key];
+        isValid = false;
+      }
+    }
   }
 }
