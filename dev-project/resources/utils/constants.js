@@ -1,1 +1,1 @@
-export const appBaseUrl = "https://django-stackoverflow-lite.herokuapp.com/api/v1";
+export const appBaseUrl = "https://django-stackoverflow-lite.herokuapp.com/api/v1/";
