@@ -124,7 +124,8 @@ i {
   color: red;
   text-align: justify;
   font-size: 0.6em;
-line-height: 0;}
+  line-height: 0;
+}
 
 .signup-info #signup-form .btn-box {
   text-align: center;
@@ -148,7 +149,7 @@ line-height: 0;}
 
 .signup-img {
   width: 40%;
-  height: auto;
+  height: 30rem;
   right: 0.5rem;
 }
 
