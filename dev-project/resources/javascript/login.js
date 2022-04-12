@@ -29,7 +29,7 @@ function validateLoginForm(event) {
       password: password,
     };
     login(formData);
-    window.location.replace("../ja");
+    // window.location.replace("./questions.html");
   }
 }
 
@@ -54,18 +54,31 @@ async function login(formData) {
   let data = JSON.stringify(formData);
 
   try {
-    const login = await axios({
+    const response = await axios({
       method: "POST",
       baseURL: appBaseUrl,
-      url: "/users/token",
+      url: "users/token/",
       headers: {
         "Content-Type": "application/json",
       },
-      body: data,
+      data,
     });
-    const response = await login.json();
-  } 
-  catch (error) {
-    console.log("Error:", error);
+    const token = response.data.access;
+    window.localStorage.setItem(
+      "user", token
+    );
+  } catch (error) {
+    const errors = error.response.data;
+    for (let key in errors) {
+      let isValid = true;
+      if (key === "email") {
+        document.getElementById("email-err").innerText = errors[key];
+        isValid = false;
+      }
+      if (key === "password") {
+        document.getElementById("password-err").innerText = errors[key];
+        isValid = false;
+      }
+    }
   }
 }

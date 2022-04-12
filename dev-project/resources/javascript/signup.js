@@ -50,7 +50,7 @@ function validateSignupForm(event) {
     password: password,
   };
   signup(formData);
-  window.location.replace("login.html");
+  // window.location.replace("login.html");
 }
 }
 
