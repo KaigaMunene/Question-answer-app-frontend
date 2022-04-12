@@ -29,7 +29,7 @@ function validateLoginForm(event) {
       password: password,
     };
     login(formData);
-    // window.location.replace("main.html");
+    // window.location.replace("./questions.html");
   }
 }
 
