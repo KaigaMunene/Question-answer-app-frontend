@@ -30,28 +30,37 @@
             </li>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Questions</a></li>
+            <li><a href="./questions.html">Questions</a></li>
         </ul>
     </nav>
+    <section class="details">
 
-    <div class="sidenav">
-        <a href="#">Questions</a>
-        <a href="#">Tags</a>
-        <a href="#">Users</a>
-    </div>
-
-    <div class="info">
-        <div class="header">
-            Top Questions 
+        <div class="sidenav">
+            <a href="#">Home</a>
+            <a href="./questions.html">Questions</a>
+            <a href="#">Tags</a>
+            <a href="#">Users</a>
         </div>
-        <div class="btn">
-            <a href="./question-form.html"><button>Add Question</button></a>
         </div>
-    </div>
 
-    <div class="qs-info">
-            <div id="questions" class="questions"></div>
-    </div>
+        <div .class="qs-info">
+            <div class="top">
+                <p> Top Questions</p>
+                <div class="btn">
+                    <a href="./question-form.html"><button>Add Question</button></a>
+                </div>
+            </div>
+            <div id="question-grid" class="question-grid">
+                <div id="card-template" class="questions">
+                   <a href="answers.html"> <h1 class="title" data-title></h1></a>
+                    <p class="question" data-question></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-nav">
+        </div>
+    </section>
     <script type="text/javascript" src="../javascript/questions.js"></script>
 
 </body>

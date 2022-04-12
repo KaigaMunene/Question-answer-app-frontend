@@ -17,29 +17,30 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="main.html">
+            <a href="#">
                 <img src="../images/logo.png" alt="StackOverflow-lite">
             </a>
         </div>
         <ul class="menu">
             <li>
                 <div class="search_box">
-                    <input id="search" onkeyup="searchInfo()" type="search" placeholder="search for questions..." >
+                    <input type="search" placeholder="search for questions...">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </li>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
+            <li><a href="./questions.html">Questions</a></li>
         </ul>
     </nav>
 
+    <section class="main">
     <div class="sidenav">
-        <a href="main.html">Questions</a>
+        <a href="./questions.html">Questions</a>
         <a href="#">Tags</a>
         <a href="#">Users</a>
       </div>
 
-    <section class="main">
         <div class="container">
             <div id="question"></div>
             <div id="answer"></div>
