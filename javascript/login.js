@@ -1,4 +1,3 @@
-import "regenerator-runtime/runtime";
 import axios from "axios";
 import { appBaseUrl } from "../utils/constants";
 
@@ -64,9 +63,7 @@ async function login(formData) {
       data,
     });
     const token = response.data.access;
-    window.localStorage.setItem(
-      "user", token
-    );
+    window.localStorage.setItem("user", token);
   } catch (error) {
     const errors = error.response.data;
     for (let key in errors) {

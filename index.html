@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Profile</title>
+    <title>StackOverflow Lite</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/answers.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <nav>
         <div class="logo">
             <a href="#">
-                <img src="../images/logo.png" alt="StackOverflow-lite">
+                <img src="./images/logo.png" alt="StackOverflow-lite">
             </a>
         </div>
         <ul class="menu">
@@ -30,35 +30,25 @@
             </li>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="./questions.html">Questions</a></li>
+            <li><a href="./pages/questions.html">Questions</a></li>
         </ul>
     </nav>
-
-    <section class="main">
-    <div class="sidenav">
-        <a href="./questions.html">Questions</a>
-        <a href="#">Tags</a>
-        <a href="#">Users</a>
-      </div>
-
-        <div class="container">
-            <div id="question"></div>
-            <div id="answer"></div>
+    <div class="hero">
+        <div class="txt-content">
+            <h1>Great minds discuss ideas, what better way to do that than sharing your knowledge.</h1><br>
+            <p> Stack Overflow Lite is a public platform building the definitive collection of coding questions &
+                answers. A community-based space to ask questions, find and contribute answers to technical challenges.
+                There is no shame in not knowing something. The shame is not willing to learn.</p>
+            <div class="actions">
+                <a href="./pages/sign-up.html"><button class="signup">Sign Up</button></a>
+                <a href="./pages/login.html"><button class="login">Login</button></a>
+            </div>
         </div>
-    </section>
-
-    <form id="answer-form" method="POST">
-        <h1> Your answer </h1>
-
-        <textarea id="ans-input" name="body" cols="92" rows="15" data-min-length="" ></textarea>
-        <div class="error-msg"> <span id="ans-input-err"></span></div>
-
-        <div>
-            <button type="submit" id="ans-btn">post your answer</button>
+        <div class="img">
+            <img src="./images/home-img.png"
+                alt="picture of someone asking and getting answers for a question">
         </div>
-    </form>
-    <script type="text/javascript" src="../javascript/answers.js"></script>
-
+    </div>
 </body>
 
 </html>

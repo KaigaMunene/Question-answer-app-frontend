@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
     <nav>
         <div class="logo">
             <a href="#">
@@ -28,13 +29,12 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </li>
-            <li><a href="#">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="./questions.html">Questions</a></li>
         </ul>
     </nav>
     <section class="details">
-
         <div class="sidenav">
             <a href="#">Home</a>
             <a href="./questions.html">Questions</a>
@@ -52,7 +52,7 @@
             </div>
             <div id="question-grid" class="question-grid">
                 <div id="card-template" class="questions">
-                   <a href="answers.html"> <h1 class="title" data-title></h1></a>
+                    <h1 class="title" data-title></h1>
                     <p class="question" data-question></p>
                 </div>
             </div>
@@ -61,8 +61,13 @@
         <div class="right-nav">
         </div>
     </section>
-    <script type="text/javascript" src="../javascript/questions.js"></script>
-
+    <script type="module" src="../javascript/questions.js"></script>
+<script>
+    const loader = document.getElementById("preloader");
+    window.addEventListener("load", ()=>{
+        loader.style.display = "none";
+    })
+</script>
 </body>
 
 </html>

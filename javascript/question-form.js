@@ -1,4 +1,3 @@
-import "regenerator-runtime/runtime";
 import axios from "axios";
 import { appBaseUrl } from "../utils/constants";
 document.getElementById("qs-form").addEventListener("submit", (event) => {
@@ -29,9 +28,9 @@ async function qsInfo(questionData) {
       },
       body: data,
     });
-    const response = await question.json();
-    window.location.replace("main.html");
-    console.log("Success:", response);
+    const response = response.data;
+    window.localStorage.getItem("user");
+    window.location.replace("./questions.html");
   } catch (error) {
     console.log("Error:", error);
   }
