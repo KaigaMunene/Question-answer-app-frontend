@@ -1,4 +1,3 @@
-import "regenerator-runtime/runtime";
 import axios from "axios";
 import { appBaseUrl } from "../utils/constants";
 
@@ -36,14 +35,14 @@ async function answerForm(answerData) {
     const register = await axios({
       method: "POST",
       baseURL: appBaseUrl,
-      url: "/ans/answer",
+      url: "/ans/answer/",
       headers: {
         "Content-Type": "application/json",
       },
       body: data,
     });
-    const response = await register.json();
-    console.log("Success:", response);
+    const response = register.data;
+    window.localStorage.getItem("user");
   } catch (error) {
     console.log("Error:", error);
   }
@@ -71,14 +70,14 @@ function appendQuestion(question) {
   document.getElementById("question").innerHTML = questions;
 }
 
-function getAnswers(question_id) {
-  axios({
+async function getAnswers(question_id) {
+  const response = await axios({
     method: "GET",
     baseURL: appBaseUrl,
     url: `ans/answers/question/${question_id}`,
-  }).then((response) => {
-    appendAnswers(response.data);
   });
+  const answer = response.data;
+  appendAnswers(answer);
 }
 
 function appendAnswers(answer) {

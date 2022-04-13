@@ -1,4 +1,3 @@
-import "regenerator-runtime/runtime";
 import axios from "axios";
 import { appBaseUrl } from "../utils/constants";
 
@@ -42,16 +41,16 @@ function validateSignupForm(event) {
     isValid = false;
   }
   if (isValid) {
-  const formData = {
-    first_name: firstName,
-    last_name: lastName,
-    username: userName,
-    email: mail,
-    password: password,
-  };
-  signup(formData);
-  // window.location.replace("login.html");
-}
+    const formData = {
+      first_name: firstName,
+      last_name: lastName,
+      username: userName,
+      email: mail,
+      password: password,
+    };
+    signup(formData);
+    // window.location.replace("login.html");
+  }
 }
 
 function firstNameValidation(firstName) {

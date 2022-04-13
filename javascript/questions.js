@@ -1,6 +1,7 @@
-import "regenerator-runtime/runtime";
 import axios from "axios";
 import { appBaseUrl } from "../utils/constants";
+
+const id = new URL(location.href).searchParams.get("id");
 
 const cardTemplate = document.getElementById("card-template");
 const questionGrid = document.getElementById("question-grid");
@@ -21,7 +22,7 @@ async function getQuestions() {
   }
 }
 
- /* function appendQuestions(questions) {
+/* function appendQuestions(questions) {
   let inquiry = "";
   for (let i = 0; i < questions.length; i++)
     inquiry += `
@@ -39,10 +40,11 @@ const appendQuestions = (questions) => {
     questionCard.querySelector("[data-title]").textContent = question.title;
     questionCard.querySelector("[data-question]").textContent =
       question.question;
-    questionGrid.append(questionCard);
-    questionCard.addEventListener("click", () => {
-      window.location = `answers.html?id=${question.id}`;
-    });
-  });
 
+    questionCard.addEventListener("click", () => {
+      window.location = `/pages/question.html?id=${question.id}`;
+    });
+
+    questionGrid.append(questionCard);
+  });
 };

@@ -1,36 +1,35 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body {
   font-family: "Poppins", sans-serif;
-  width: 100%;
   background-color: #f7fbff;
-  height: 100vh;
 }
 
 nav {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 2px;
-  position: fixed;
+  position: sticky;
+  height: 3rem;
   top: 0;
   left: 0;
   width: 100%;
   padding: 5px 40px;
-  background-color: transparent;
+  background-color: #f7fbff;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid black;
 }
 
 nav .logo img {
   width: 12rem;
   height: auto;
-  padding: 2px;
+  padding-top: 0.8rem;
 }
 
 nav .logo img:hover {
@@ -92,68 +91,58 @@ i {
   cursor: pointer;
 }
 
-.signup-info {
+.container{
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
-.signup-info #signup-form {
-  line-height: 3rem;
-  width: 20rem;
-  height: 30rem;
-  padding: 1rem;
+h1{
+  font-weight: 400;
+  padding-bottom:1.5rem ;
+}
+
+.form-data{
+  width: 50rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 5px 10px 18px rgb(255, 123, 0);
+  box-shadow: 5px 10px 18px rgb(240, 155, 75);
+  background-color: #fff;
 }
 
-.signup-info #signup-form h1 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-#signup-form label {
+label{
   font-weight: 500;
+}
+
+p{
   font-size: 0.8rem;
 }
 
-#signup-form .error-msg {
-  color: red;
-  text-align: justify;
-  font-size: 0.6em;
-  line-height: 0;
-}
-
-.signup-info #signup-form .btn-box {
-  text-align: center;
-}
-
-#signup-btn {
-  background-color: white;
+input{
+  width: 40rem;
   padding: 0.5rem;
-  border: 1px solid black;
-  border-radius: 0.5rem;
+  border: 1px solid grey;
+  border-radius:0.5rem;
 }
 
-#signup-btn:hover {
+textarea{
+  width: 40rem;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius:0.5rem;
+}
+
+button{
+  border: 1px solid grey;
+  border-radius: 1rem;
+  padding: 0.5rem;
   background-color: rgb(255, 123, 0);
+}
+
+button:hover{
+  background-color: #000;
+  color: white;
   cursor: pointer;
-}
-
-.signup-info #signup-form p {
-  font-size: 0.6rem;
-}
-
-.signup-img {
-  width: 40%;
-  height: 30rem;
-  right: 0.5rem;
-}
-
-.signup-info .signup-img img {
-  width: 100%;
-  height: auto;
 }
