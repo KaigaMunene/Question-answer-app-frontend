@@ -13,7 +13,8 @@ function validateQuestionForm(event) {
     title: title,
     question: body,
   };
-  qsInfo(questionData);
+  console.log(questionData);
+  console.log(qsInfo(questionData));
 }
 
 async function qsInfo(questionData) {
@@ -22,16 +23,35 @@ async function qsInfo(questionData) {
     const question = await axios({
       method: "POST",
       baseURL: appBaseUrl,
-      url: "/qs",
+      url: "qs/",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("user")}`,
       },
-      body: data,
+      data,
     });
-    const response = response.data;
-    window.localStorage.getItem("user");
-    window.location.replace("./questions.html");
+    const response = question.data;
+    console.log(response);
+    if (question.status == 201) {
+      window.location.replace("./questions.html");
+    }
+    if(question.status == 401){
+
+    }
   } catch (error) {
-    console.log("Error:", error);
+    console.log(error.response.data);
+    const errors = error.response.data;
+    for (let key in errors) {
+      let isValid = true;
+      if (key === "title") {
+        document.getElementById("title-err").textContent = errors[key];
+        isValid = false;
+      }
+      if (key === "question") {
+        document.getElementById("qs-input-err").textContent = errors[key];
+        isValid = false;
+      }
+    }
   }
 }
+

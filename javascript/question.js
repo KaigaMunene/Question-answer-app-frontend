@@ -23,9 +23,7 @@ function validateAnswerForm(event) {
       answer: answer,
     };
     answerForm(answerData);
-    window.location.replace(`question.html?id=${id}`);
   }
-  return answerData;
 }
 
 async function answerForm(answerData) {
@@ -35,16 +33,26 @@ async function answerForm(answerData) {
     const register = await axios({
       method: "POST",
       baseURL: appBaseUrl,
-      url: "/ans/answer/",
+      url: "ans/answer/",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("user")}`
       },
-      body: data,
+      data,
     });
     const response = register.data;
-    window.localStorage.getItem("user");
+    if(register.status == 201){
+      window.location.replace(`question.html?id=${id}`);
+    }
+
   } catch (error) {
-    console.log("Error:", error);
+    const errors = error.response.data;
+    console.log(errors)
+    let isValid = true;
+    if (key === "answer"){
+      document.getElementById("ans-input-err").textContent = errors[key];
+      isValid= false;
+    }
   }
 }
 

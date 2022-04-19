@@ -112,6 +112,15 @@ h1{
   background-color: #fff;
 }
 
+.form-data .error-msg {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: red;
+  text-align: justify;
+  font-size: 0.6em;
+  line-height: 0;
+}
+
 label{
   font-weight: 500;
 }
