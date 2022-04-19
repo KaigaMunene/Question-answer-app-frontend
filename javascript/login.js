@@ -1,6 +1,8 @@
 import axios from "axios";
 import { appBaseUrl } from "../utils/constants";
 
+// refreshToken();
+
 document.getElementById("login-form").addEventListener("submit", (event) => {
   validateLoginForm(event);
 });
@@ -28,7 +30,6 @@ function validateLoginForm(event) {
       password: password,
     };
     login(formData);
-    // window.location.replace("./questions.html");
   }
 }
 
@@ -62,8 +63,13 @@ async function login(formData) {
       },
       data,
     });
-    const token = response.data.access;
-    window.localStorage.setItem("user", token);
+    const accessToken = response.data.access;
+    const refreshToken = response.data.refresh;
+    window.localStorage.setItem("user", accessToken);
+    window.localStorage.setItem("refresh", refreshToken);
+    // if (response.status == 200) {
+    //   window.location.replace("./questions.html");
+    // }
   } catch (error) {
     const errors = error.response.data;
     for (let key in errors) {
@@ -79,3 +85,20 @@ async function login(formData) {
     }
   }
 }
+
+async function refreshToken() {
+  const response = await axios({
+    method: "post",
+    baseURL: appBaseUrl,
+    url: "users/token/refresh/",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: localStorage.getItem("refresh"),
+  });
+  if (response.status == 200) {
+    return localStorage.getItem("user");
+  }
+  console.log(response.data);
+}
+console.log(refreshToken());

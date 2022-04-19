@@ -12,31 +12,32 @@ function validateSignupForm(event) {
   const userName = document.getElementById("username").value;
   const mail = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  resetErrors();
 
   let isValid = true;
   if (!firstNameValidation(firstName)) {
-    document.getElementById("firstname-err").innerText =
+    document.getElementById("firstname-err").textContent =
       "Enter a valid first name, must be one word";
     isValid = false;
   }
 
   if (!lastNameValidation(lastName)) {
-    document.getElementById("lastname-err").innerText =
+    document.getElementById("lastname-err").textContent =
       "Enter a valid last name, must be one word";
     isValid = false;
   }
   if (!usernameValidation(userName)) {
-    document.getElementById("username-err").innerText =
+    document.getElementById("username-err").textContent =
       "Enter a valid username,shouldn't be less than 6 characters";
     isValid = false;
   }
   if (!emailValidation(mail)) {
-    document.getElementById("email-err").innerText =
+    document.getElementById("email-err").textContent =
       "enter a valid email address";
     isValid = false;
   }
   if (!passswordValidation(password)) {
-    document.getElementById("password-err").innerText =
+    document.getElementById("password-err").textContent =
       "password should be more than 8 characters";
     isValid = false;
   }
@@ -49,7 +50,6 @@ function validateSignupForm(event) {
       password: password,
     };
     signup(formData);
-    // window.location.replace("login.html");
   }
 }
 
@@ -110,32 +110,42 @@ async function signup(formData) {
       },
       data,
     });
-
-    console.log(response.data);
+    if (response.status == 201) {
+      window.location.replace("./login.html");
+    }
   } catch (error) {
     const errors = error.response.data;
+    console.log(errors)
+
     for (let key in errors) {
       let isValid = true;
       if (key === "first_name") {
-        document.getElementById("firstname-err").innerText = errors[key];
+        document.getElementById("firstname-err").textContent = errors[key];
         isValid = false;
       }
       if (key === "last_name") {
-        document.getElementById("last_name-err").innerText = errors[key];
+        document.getElementById("lastname-err").textContent = errors[key];
         isValid = false;
       }
       if (key === "username") {
-        document.getElementById("username-err").innerText = errors[key];
+        document.getElementById("username-err").textContent = errors[key];
         isValid = false;
       }
       if (key === "email") {
-        document.getElementById("email-err").innerText = errors[key];
+        document.getElementById("email-err").textContent = errors[key];
         isValid = false;
       }
       if (key === "password") {
-        document.getElementById("password-err").innerText = errors[key];
+        document.getElementById("password-err").textContent = errors[key];
         isValid = false;
       }
     }
   }
+}
+function resetErrors() {
+  document.getElementById("firstname-err").textContent = "";
+  document.getElementById("lastname-err").textContent = "";
+  document.getElementById("username-err").textContent = "";
+  document.getElementById("email-err").textContent = "";
+  document.getElementById("password-err").textContent = "";
 }

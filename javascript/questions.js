@@ -13,7 +13,7 @@ async function getQuestions() {
     const response = await axios({
       method: "GET",
       baseURL: appBaseUrl,
-      url: `/qs/questions`,
+      url: `qs/questions`,
     });
     console.log(response);
     appendQuestions(response.data);
