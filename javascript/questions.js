@@ -22,18 +22,6 @@ async function getQuestions() {
   }
 }
 
-/* function appendQuestions(questions) {
-  let inquiry = "";
-  for (let i = 0; i < questions.length; i++)
-    inquiry += `
-  <div>
-  <a href="question.html?id=${questions[i].id}">
-  <h1>${questions[i].title}</h1>
-  </a>
-  </div>`;
-  document.getElementById("questions").innerHTML = inquiry;
-} */
-
 const appendQuestions = (questions) => {
   questions.forEach((question) => {
     const questionCard = cardTemplate.cloneNode(true);
