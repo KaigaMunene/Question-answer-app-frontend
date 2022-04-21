@@ -5,8 +5,19 @@ const id = new URL(location.href).searchParams.get("id");
 
 const cardTemplate = document.getElementById("card-template");
 const questionGrid = document.getElementById("question-grid");
-
+const searchInput = document.querySelector("[data-search]");
 getQuestions();
+
+let qsInfo = [];
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  qsInfo.forEach((qs) => {
+    const isVisisble =
+      qs.title.toLowerCase().includes(value) ||
+      qs.question.toLowerCase().includes(value);
+    qs.element.classList.toggle("hide", !isVisisble);
+  });
+});
 
 async function getQuestions() {
   try {
@@ -15,36 +26,26 @@ async function getQuestions() {
       baseURL: appBaseUrl,
       url: `qs/questions`,
     });
-    console.log(response);
     appendQuestions(response.data);
   } catch (error) {
     console.log(error.message);
   }
 }
 
-/* function appendQuestions(questions) {
-  let inquiry = "";
-  for (let i = 0; i < questions.length; i++)
-    inquiry += `
-  <div>
-  <a href="question.html?id=${questions[i].id}">
-  <h1>${questions[i].title}</h1>
-  </a>
-  </div>`;
-  document.getElementById("questions").innerHTML = inquiry;
-} */
-
 const appendQuestions = (questions) => {
-  questions.forEach((question) => {
+  qsInfo = questions.map((question) => {
     const questionCard = cardTemplate.cloneNode(true);
     questionCard.querySelector("[data-title]").textContent = question.title;
     questionCard.querySelector("[data-question]").textContent =
       question.question;
-
     questionCard.addEventListener("click", () => {
       window.location = `/pages/question.html?id=${question.id}`;
     });
-
     questionGrid.append(questionCard);
+    return {
+      title: question.title,
+      question: question.question,
+      element: questionCard,
+    };
   });
 };
