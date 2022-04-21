@@ -52,7 +52,6 @@ function passwordValidation(password) {
 
 async function login(formData) {
   let data = JSON.stringify(formData);
-
   try {
     const response = await axios({
       method: "POST",
@@ -67,9 +66,9 @@ async function login(formData) {
     const refreshToken = response.data.refresh;
     window.localStorage.setItem("user", accessToken);
     window.localStorage.setItem("refresh", refreshToken);
-    // if (response.status == 200) {
-    //   window.location.replace("./questions.html");
-    // }
+    if (response.status == 200) {
+      window.location.replace("./questions.html");
+    }
   } catch (error) {
     const errors = error.response.data;
     for (let key in errors) {
@@ -86,19 +85,19 @@ async function login(formData) {
   }
 }
 
-async function refreshToken() {
-  const response = await axios({
-    method: "post",
-    baseURL: appBaseUrl,
-    url: "users/token/refresh/",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    data: localStorage.getItem("refresh"),
-  });
-  if (response.status == 200) {
-    return localStorage.getItem("user");
-  }
-  console.log(response.data);
-}
-console.log(refreshToken());
+// async function refreshToken() {
+//   const response = await axios({
+//     method: "post",
+//     baseURL: appBaseUrl,
+//     url: "users/token/refresh/",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     data: localStorage.getItem("refresh"),
+//   });
+//   if (response.status == 200) {
+//     return localStorage.getItem("user");
+//   }
+//   console.log(response.data);
+// }
+// console.log(refreshToken());
