@@ -1,95 +1,193 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  background-color: #f7fbff;
+  height: 100vh;
+}
+
+nav {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 0.5rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+nav .logo img {
+  width: 12rem;
+  height: auto;
+  padding-top: 0.8rem;
+}
+
+nav .logo img:hover {
+  opacity: 0.7;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu li {
+  list-style: none;
+  margin: 0 1rem;
+  display: block;
+}
+
+.menu li a {
+  color: #000;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: all ease 0.2s;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  position: relative;
+  background-color: #f7fbff;
+  min-height: 50vh;
+}
+
+.text {
+  line-height: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 10px 18px rgb(255, 123, 0);
+  width: 30rem;
+  height: 60vh;
+}
+
+.text p{
+  bottom: -1rem;
+}
+
+.text .intro {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+img {
+  width: 100%;
+  height: 30rem;
+}
+
+.custom-shape-divider-bottom-1650533953 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1650533953 svg {
+  position: relative;
+  display: block;
+  width: calc(132% + 1.3px);
+  height: 146px;
+}
+
+.custom-shape-divider-bottom-1650533953 .shape-fill {
+  fill: #545e75;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1650533953 svg {
+    width: calc(137% + 1.3px);
+    height: 146px;
   }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    background-color: #f7fbff;
-    height: 100vh;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1650533953 svg {
+    width: calc(132% + 1.3px);
+    height: 110px;
   }
-  
-  nav {
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 2px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-left: 0.5rem;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-  }
-  
-  nav .logo img {
-    width: 12rem;
-    height: auto;
-    padding-top: 0.8rem;
-  
-  }
-  
-  nav .logo img:hover {
-    opacity: 0.7;
-  }
-  
-  .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .menu li {
-    list-style: none;
-    margin: 0 1rem;
-  }
-  
-  .menu li a {
-    color: #000;
-    font-size: 0.8rem;
-    text-decoration: none;
-  }
-  
-  .menu li a:hover {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    transition: all ease 0.2s;
-  }
-  
-  .search_box {
-    position: relative;
-    width: 65px;
-    height: 40px;
-    line-height: 2.5rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    transition: 0.5s;
-    border-radius: 2rem;
-    padding: 0 1rem;
-  }
-  
-  .search_box input {
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    color: #555;
-    font-size: 1.1rem;
-    background-color: transparent;
-  }
-  
-  .search_box:hover {
-    background-color: white;
-    width: 500px;
-  }
-  
-  i {
-    font-size: 1em;
-    padding-right: 1rem;
-    cursor: pointer;
-  }
+}
+
+.info {
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.info img {
+  width: 30rem;
+  height: 60vh;
+}
+.info p {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.content {
+  width: 30rem;
+  height: 60vh;
+}
+.footer {
+  width: 100%;
+  height: 80vh;
+  background-color: rgb(18, 18, 18);
+ 
+}
+
+.footer .footer-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  color: #f7fbff;
+  padding-top: 5rem;
+}
+
+ul{
+  list-style-type: circle;
+}
+
+a{
+  text-decoration: none;
+  color: #f7fbff;
+}
+
+/* CSS rules for intersection Observer */
+
+h1, p{
+  opacity: 0;
+  position: relative;
+  transition: all 0.8s ease-out;
+}
+
+.show{
+  opacity: 1;
+  bottom: 0;
+}

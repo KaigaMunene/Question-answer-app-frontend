@@ -8,15 +8,21 @@ const questionGrid = document.getElementById("question-grid");
 const searchInput = document.querySelector("[data-search]");
 getQuestions();
 
-let qsInfo = [];
-searchInput.addEventListener("input", (e) => {
-  const value = e.target.value.toLowerCase();
-  qsInfo.forEach((qs) => {
-    const isVisisble =
-      qs.title.toLowerCase().includes(value) ||
-      qs.question.toLowerCase().includes(value);
-    qs.element.classList.toggle("hide", !isVisisble);
-  });
+searchInput.addEventListener("input", async (e) => {
+  const value = e.target.value;
+  try {
+    const response = await axios({
+      method: "GET",
+      baseURL: appBaseUrl,
+      url: `qs/questions`,
+      params: { title: value },
+    });
+    console.log("search results", response.data);
+    if(value != 0 ){
+      window.location.replace(`./searched_questions.html`)
+  }}catch (error) {
+    console.log(error.message);
+  }
 });
 
 async function getQuestions() {

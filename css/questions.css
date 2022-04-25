@@ -23,12 +23,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
+  z-index: 1;
+
 }
 
 nav .logo img {
   width: 12rem;
   height: auto;
-  padding: 2px;
+  padding-top: 0.8rem;
 }
 
 nav .logo img:hover {
@@ -113,6 +115,7 @@ i {
   letter-spacing: 0.1rem;
   border-bottom: 1px solid black;
   text-align: center;
+
 }
 
 .sidenav a:hover {
