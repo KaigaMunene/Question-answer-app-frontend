@@ -1,8 +1,6 @@
 import axios from "axios";
 import { appBaseUrl } from "../utils/constants";
 
-// refreshToken();
-
 document.getElementById("login-form").addEventListener("submit", (event) => {
   validateLoginForm(event);
 });

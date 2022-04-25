@@ -63,7 +63,6 @@ async function getQuestion(question_id) {
       baseURL: appBaseUrl,
       url: `/qs/question/${question_id}`,
     });
-    console.log(response);
     appendQuestion(response.data);
   } catch (error) {
     console.log(error.message);

@@ -60,38 +60,6 @@ nav .logo img:hover {
   transition: all ease 0.2s;
 }
 
-.search_box {
-  position: relative;
-  width: 65px;
-  height: 40px;
-  line-height: 2.5rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  transition: 0.5s;
-  border-radius: 2rem;
-  padding: 0 1rem;
-}
-
-.search_box input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  color: #555;
-  font-size: 1.1rem;
-  background-color: transparent;
-}
-
-.search_box:hover {
-  background-color: white;
-  width: 500px;
-}
-
-i {
-  font-size: 1em;
-  cursor: pointer;
-}
 .hero {
   width: 100%;
   height: 100vh;

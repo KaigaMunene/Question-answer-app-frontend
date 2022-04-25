@@ -1,39 +1,24 @@
-import axios from "axios";
-import { appBaseUrl } from "../utils/constants";
+window.addEventListener("DOMContentLoaded", setup);
 
-document.getElementById("search").addEventListener("click", (event) => {
-  validateSearchForm(event);
-});
-
-function validateSearchForm(event) {
-  event.preventDefault();
-  searchQuestion();
-}
-async function searchQuestion(title) {
-  try {
-    const response = await axios({
-      method: "GET",
-      baseUrl: appBaseUrl,
-      params: { title: title },
-      url: `qs/questions?title=${title}`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data,
-    });
-    appendSearchInfo(response.data);
-  } catch (error) {
-    console.log(error);
+function setup(){
+  const options = {
+    rootMargin: "0px 0px -200px 0px"
   }
-}
 
-function appendSearchInfo(question) {
-  let questions = "";
-  for (let i = 0; i < question.length; i++)
-    answers += `
-      <div>
-      <h3>${question[i].title}</h3>
-      <p>${question[i].question}</p>
-      `;
-  document.getElementById();
+  const observer = new IntersectionObserver((entries, observer)=> {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      } else{
+        return; 
+      }
+    })
+  }, options);
+
+  const header = document.querySelectorAll("h1");
+  header.forEach(h => observer.observe(h));
+
+  const paras = document.querySelectorAll('p');
+  paras.forEach(p => observer.observe(p));
 }
