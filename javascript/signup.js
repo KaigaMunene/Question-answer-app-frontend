@@ -72,7 +72,7 @@ function lastNameValidation(lastName) {
 }
 
 function usernameValidation(userName) {
-  let name = /^[a-z\d_]{6,16}$/;
+  let name = /^[a-z\d_]{6,16}$/i;
   if (userName.match(name)) {
     return true;
   } else {
@@ -115,7 +115,6 @@ async function signup(formData) {
     }
   } catch (error) {
     const errors = error.response.data;
-    console.log(errors)
 
     for (let key in errors) {
       let isValid = true;
