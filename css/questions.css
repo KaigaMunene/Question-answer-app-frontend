@@ -22,9 +22,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
   z-index: 1;
-
 }
 
 nav .logo img {
@@ -59,39 +58,6 @@ nav .logo img:hover {
   transition: all ease 0.2s;
 }
 
-.search_box {
-  position: relative;
-  width: 65px;
-  height: 40px;
-  line-height: 2.5rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  transition: 0.5s;
-  border-radius: 2rem;
-  padding: 0 1rem;
-}
-
-.search_box input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  color: #555;
-  font-size: 1.1rem;
-  background-color: transparent;
-}
-
-.search_box:hover {
-  background-color: white;
-  width: 500px;
-}
-
-i {
-  font-size: 1em;
-  cursor: pointer;
-}
-
 .details {
   width: 100%;
   height: calc(100vh - 3rem);
@@ -115,7 +81,6 @@ i {
   letter-spacing: 0.1rem;
   border-bottom: 1px solid black;
   text-align: center;
-
 }
 
 .sidenav a:hover {
@@ -135,14 +100,14 @@ p {
   letter-spacing: 1px;
 }
 
-button{
+button {
   border: 1px solid grey;
   border-radius: 1rem;
   padding: 0.5rem;
   background-color: rgb(255, 123, 0);
 }
 
-button:hover{
+button:hover {
   background-color: #000;
   color: white;
   cursor: pointer;
@@ -160,7 +125,7 @@ button:hover{
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   background-color: #f7fbff;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .question-grid .questions:first-child {
@@ -177,7 +142,7 @@ h1 {
   font-weight: 400;
 }
 
-#preloader{
+#preloader {
   background: #fff url(../images/loader-gif.gif) no-repeat center;
   background-size: 20%;
   height: 100vh;
