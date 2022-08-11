@@ -8,23 +8,6 @@ const questionGrid = document.getElementById("question-grid");
 const searchInput = document.querySelector("[data-search]");
 getQuestions();
 
-searchInput.addEventListener("input", async (e) => {
-  const value = e.target.value;
-  try {
-    const response = await axios({
-      method: "GET",
-      baseURL: appBaseUrl,
-      url: `qs/questions`,
-      params: { title: value },
-    });
-    console.log("search results", response.data);
-    if(value != 0 ){
-      window.location.replace(`./searched_questions.html`)
-  }}catch (error) {
-    console.log(error.message);
-  }
-});
-
 async function getQuestions() {
   try {
     const response = await axios({
@@ -34,7 +17,7 @@ async function getQuestions() {
     });
     appendQuestions(response.data);
   } catch (error) {
-    console.log(error.message);
+    return error.message;
   }
 }
 
